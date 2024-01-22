@@ -42,6 +42,12 @@ export default defineNuxtConfig({
     usePrimeVue: true,
     cssLayerOrder: "tailwind-base, primevue, tailwind-utilities",
   },
+  router: {
+    options: {
+      hashMode: true,
+      scrollBehaviorType: "smooth",
+    },
+  },
   buildModules: ["@nuxt/fontawesome"],
   fontawesome: {
     icons: {
