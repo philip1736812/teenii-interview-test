@@ -7,6 +7,14 @@ defineProps({
     required: true,
   },
 });
+
+const isValidValue = (value) => {
+  if (parseFloat(value) !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+};
 </script>
 
 <template>
@@ -40,20 +48,45 @@ defineProps({
         </div>
       </div>
       <div class="font-light">
-        <span>{{ detail.estimated_price }}</span>
+        <span
+          :class="
+            isValidValue(detail.estimated_price)
+              ? 'second-text-color font-medium'
+              : 'text-neutral-500'
+          "
+          >{{ detail.estimated_price }}</span
+        >
       </div>
       <div class="font-light flex items-center">
-        <span class="mr-1">{{ detail.floor_price }}</span>
+        <span
+          class="mr-1"
+          :class="
+            isValidValue(detail.floor_price)
+              ? 'second-text-color font-medium'
+              : 'text-neutral-500'
+          "
+          >{{ detail.floor_price }}</span
+        >
         <QuestionMarkIcon />
       </div>
 
       <div class="font-light flex items-center justify-end">
-        <span class="mr-1">{{ detail.acquisition_price }}</span>
+        <span
+          class="mr-1"
+          :class="
+            isValidValue(detail.acquisition_price)
+              ? 'second-text-color font-medium'
+              : 'text-neutral-500'
+          "
+          >{{ detail.acquisition_price }}</span
+        >
         <QuestionMarkIcon />
       </div>
 
       <div class="font-light flex items-center justify-end">
-        {{ detail.acquisition_date }}
+        <span>
+          {{ detail.acquisition_date }}
+        </span>
       </div>
 
       <div class="border rounded-md w-6 h-6 flex items-center justify-center">

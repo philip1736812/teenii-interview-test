@@ -6,8 +6,8 @@ export default <RouterConfig>{
   routes: (_routes) => [
     {
       path: "/",
-      name: "home",
-      component: () => import("~/pages/Index.vue"),
+      name: "index",
+      component: () => import("~/pages/index.vue"),
     },
   ],
 };
